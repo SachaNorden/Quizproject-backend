@@ -1,0 +1,46 @@
+######### NORMAL OPERATION  ###########
+
+### Read a specific quiz
+GET http://localhost:3000/quizs/allQuiz
+### Read a specific quiz
+GET http://localhost:3000/quizs
+
+### Create a quiz 
+POST http://localhost:3000/quizs
+Content-Type: application/json
+
+{
+  "question":"Quel est le jeu favoris de Sacha",
+  "choices": ["Just cause 3","Overwatch","Minecraft","Rocket League"],
+  "reponse":"Minecraft"
+}
+
+### Update a specific quiz
+PATCH http://localhost:3000/quizs/01917b53-6cb3-4afd-b0d4-a410ee8de9aa
+Content-Type: application/json
+
+{
+  "question":"Quel est l'animal préféré de Sacha?",
+  "reponse":"Chat"
+}
+
+### Delete a specific quiz
+DELETE http://localhost:3000/quizs/01917b53-6cb3-4afd-b0d4-a410ee8de9aa
+
+
+######### ERROR OPERATION  ###########
+
+### Read a non-existing quiz
+GET http://localhost:3000/quizs/100
+
+### Update a non-existing quiz
+PATCH http://localhost:3000/quizs/200
+Content-Type: application/json
+
+{
+  "question":"Quel est l'animal préféré de Sacha?",
+  "reponse":"Chat"
+}
+
+### Delete a non-existing quiz
+DELETE http://localhost:3000/quizs/200
